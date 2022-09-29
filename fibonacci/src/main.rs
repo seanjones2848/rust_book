@@ -11,15 +11,15 @@ fn main() {
         .read_line(&mut n)
         .expect("Failed to read line");
 
-    let n: i128 = n.trim().parse().expect("Please put in a positive number!");
+    let n: u128 = n.trim().parse().expect("Please put in a positive number!");
 
     if n < 1 {
         println!("Please put in a number greater than 0!");
         return
     }
 
-    let mut i: i128 = 0;
-    let mut j: i128 = 1;
+    let mut i: u128 = 0;
+    let mut j: u128 = 1;
 
     for _ in 0..n-1 {
         let k = j;
