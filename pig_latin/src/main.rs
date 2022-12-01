@@ -22,8 +22,13 @@ fn main() {
         match first_letter {
             Some(letter) => {
                 let rest_of_word = chars.as_str();
-        
-                let pig_latin_word = format!("{}-{}ay", rest_of_word, letter.to_lowercase());
+
+                let pig_latin_word = if word.chars().count() > 1 {
+                    format!("{}-{}ay", rest_of_word, letter.to_lowercase())
+                } else {
+                    format!("{}ay", letter.to_lowercase())
+                };
+                
                 if idx > 0 {
                     pig_latin_phrase += " "
                 }
